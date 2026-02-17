@@ -1,21 +1,26 @@
-# secure-chat-coursework
+# Secure Chat Application (Python-Based)
 
 ## Overview
 A secure, real-time messaging application built with Python. This project demonstrartes End-to-End Encrpytion (E2EE) using AES-18, implemented via the Fernet module, over a WebSocket connection using Tkinter for the Gui
 
 ## Learning Outcomes
+[TODO: Add learning objectives from the project]
 - 1
 - 2
 - 3
 - 4
 
 ## Features
+[TODO: Add about the features of the application]
 - 1
 - 2
 - 3
 - 4
 
 ## Project Structure
+```
+[TODO: Add file structure in this repo]
+```
 
 ## Quick Start
 ```bash
