@@ -69,10 +69,11 @@ class SecureChatApp:
             self.chat_log.config(state="disabled")
 
     def on_connected(self, msg):
-        pass
+        self.log_to_chat(f"[SYSTEM] {msg}")
 
     def on_disconnected(self):
-        pass
+        self.log_to_chat("[SYSTEM] Disconnected")
 
     def on_close(self):
-        pass
+        self.core.stop()
+        self.root.destroy()
