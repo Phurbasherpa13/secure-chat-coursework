@@ -12,3 +12,28 @@ class ChatCore:
         self.loop = None
         self.security = None
         self.running = False
+
+    def set_security(self, password):
+        pass
+
+    def start_thread(self):
+        pass
+
+    def run_loop():
+        pass
+
+    async def host_server(self, host, port):
+        pass
+
+    async def handle_connection(self, websocket):
+        pass
+
+    async def connect_client(self, uri):
+        pass
+
+    def send(self, message):
+        pass
+
+
+    def stop(self):
+        pass
