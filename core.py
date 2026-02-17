@@ -14,10 +14,12 @@ class ChatCore:
         self.running = False
 
     def set_security(self, password):
-        pass
+        self.security = SecurityEngine(password)
 
     def start_thread(self):
-        pass
+        self.running = True
+        self.thread = threading.Thread(target=self.run_loop, daemon=True)
+        self.thread.start()
 
     def run_loop():
         pass
