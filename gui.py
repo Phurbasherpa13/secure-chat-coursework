@@ -51,10 +51,22 @@ class SecureChatApp:
             self.msg_entry.delete(0, tk.END)
 
     def log_to_chat(self, msg):
-        pass
+        save_to_file(self.log_file, msg)
+
+        def update():
+            self.chat_log.config(state="normal")
+            self.chat_log.insert(tk.END, msg + "\n")
+            self.chat_log.see(tk.END)
+            self.chat_log.config(state="disabled")
+
+        self.root.after(0, update)
 
     def load_history(self):
-        pass
+        history = load_history(self.log_file)
+        if history:
+            self.chat_log.config(state="normal")
+            self.chat_log.insert(tk.END, history)
+            self.chat_log.config(state="disabled")
 
     def on_connected(self, msg):
         pass
