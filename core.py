@@ -17,6 +17,7 @@ class ChatCore:
         self.security = SecurityEngine(password)
 
     def start_thread(self):
+        """Starts the asyncio event loop in a separate thread."""
         self.running = True
         self.thread = threading.Thread(target=self.run_loop, daemon=True)
         self.thread.start()
@@ -29,7 +30,7 @@ class ChatCore:
     async def host_server(self, host, port):
         try:
             async with websockets.serve(self.handle_connection, host, port):
-                self.log(f"[SYSTEM] Server started on ws://{host}:{port}")
+                self.log(f"[SYSTEM] WebSocket Server started on ws://{host}:{port}")
                 await asyncio.Future()
         except Exception as e:
             self.log(f"[Error] Server failed: {e}")
@@ -38,14 +39,16 @@ class ChatCore:
     async def handle_connection(self, websocket):
         self.websocket = websocket
         self.on_connected("Client Connected")
-        self.log("[SYSTEM] Secure connection established.")
-
+        self.log("[SYSTEM] Secure WebSocket connection established.")
+        
         try:
             async for message in websocket:
                 decrypted = self.security.decrypt_message(message)
                 self.log(f"[Friend] {decrypted}")
         except websockets.exceptions.ConnectionClosed:
             self.log("[SYSTEM] Connection closed.")
+        except Exception as e:
+            self.log(f"[Error] {e}")
         finally:
             self.on_disconnected()
 
@@ -55,7 +58,7 @@ class ChatCore:
                 self.websocket = websocket
                 self.on_connected("Connected to Server")
                 self.log(f"[SYSTEM] Connected to {uri}")
-
+                
                 async for message in websocket:
                     decrypted = self.security.decrypt_message(message)
                     self.log(f"[Friend] {decrypted}")
@@ -67,10 +70,7 @@ class ChatCore:
         if not self.websocket or not self.security:
             return
         encrypted = self.security.encrypt_message(message)
-        asyncio.run_coroutine_threadsafe(
-            self.websocket.send(encrypted), self.loop
-        )
-
+        asyncio.run_coroutine_threadsafe(self.websocket.send(encrypted), self.loop)
 
     def stop(self):
         if self.loop:
