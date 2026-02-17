@@ -7,7 +7,7 @@ from utils import save_to_file, load_history
 
 # This class handles the graphical interface of the application
 class SecureChatApp:
-    
+
     # This is the intializer function to intialize application heading information
     def __init__(self, root):
         self.root = root
@@ -28,3 +28,25 @@ class SecureChatApp:
         self.load_history()
 
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+    def create_widgets(self):
+        pass
+    
+
+    def send(self):
+        pass
+
+    def log_to_chat(self, msg):
+        pass
+
+    def load_history(self):
+        pass
+
+    def on_connected(self, msg):
+        pass
+
+    def on_disconnected(self):
+        pass
+
+    def on_close(self):
+        pass
