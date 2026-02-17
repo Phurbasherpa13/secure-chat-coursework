@@ -30,11 +30,25 @@ class SecureChatApp:
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
 
     def create_widgets(self):
-        pass
+        ttk.Label(self.root, text=">> SECURE WEBSOCKET CHAT <<").pack(pady=10)
+
+        self.chat_log = scrolledtext.ScrolledText(self.root, state="disabled")
+        self.chat_log.pack(fill="both", expand=True, padx=20)
+
+        self.msg_entry = ttk.Entry(self.root)
+        self.msg_entry.pack(fill="x", padx=20, pady=10)
+        self.msg_entry.bind("<Return>", lambda e: self.send())
+
+        self.send_btn = ttk.Button(self.root, text="SEND", command=self.send)
+        self.send_btn.pack()
     
 
     def send(self):
-        pass
+        msg = self.msg_entry.get()
+        if msg:
+            self.core.send(msg)
+            self.log_to_chat(f"[You] {msg}")
+            self.msg_entry.delete(0, tk.END)
 
     def log_to_chat(self, msg):
         pass
