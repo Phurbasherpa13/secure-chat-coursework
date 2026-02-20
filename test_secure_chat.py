@@ -1,0 +1,1 @@
+# This script contains test cases for the application
