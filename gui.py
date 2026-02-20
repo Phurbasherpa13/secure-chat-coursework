@@ -43,7 +43,7 @@ class SecureChatApp:
 
         ttk.Label(config_frame, text="Port:").grid(row=0, column=2)
         self.port_entry = ttk.Entry(config_frame, width=8)
-        self.port_entry.insert(0, "8765")
+        self.port_entry.insert(0, "8888")
         self.port_entry.grid(row=0, column=3, padx=5)
 
         ttk.Label(config_frame, text="Key:").grid(row=1, column=0, pady=5)
