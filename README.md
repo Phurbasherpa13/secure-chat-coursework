@@ -5,7 +5,7 @@ A secure, real-time messaging application built with Python. This project demons
 
 ## Learning Outcomes
 [TODO: Add learning objectives from the project]
-- 1
+- 1. 
 - 2
 - 3
 - 4
@@ -21,20 +21,24 @@ A secure, real-time messaging application built with Python. This project demons
 ## Project Structure
 ```SecureChatApp/
 │
-├── main.py              # Entry point: Initializes the app and applies nest-asyncio.
-├── gui.py               # UI Layer: Handles Tkinter widgets, layout, and user events.
-├── core.py              # Network Layer: Manages WebSocket connections and the event loop.
-├── security.py          # Cryptography Layer: Handles AES-128 encryption/decryption logic.
-├── utils.py             # Utility Layer: Handles file I/O (saving/loading history).
+├── main.py              # Entry point
+├── gui.py               # Tkinter GUi
+├── core.py              # Network Layers and the event loop.
+├── security.py          # Cryptography Layers.
+├── utils.py             # Utility Layer (I/O) logs.
 ├── requirements.txt     # List of Python dependencies.
 ├── .gitignore          # Specifies files to exclude from version control.
 └── README.md           # This file.
 ```
+## Installation
+## Prerequisites
+- Python 3.8 or higher.
+- Windows, macOS, or Linux.
 
 ## Quick Start
 ```bash
 # Clone the repository
-git clone
+git clone https://github.com/Phurbasherpa13/secure-chat-coursework.git
 cd secure-chat-coursework
 
 # install the required libraries and modules
@@ -45,7 +49,7 @@ python3 main.py
 ```
 
 **Expected Output**
-[TODO: Add images of the application]
+![alt text](image.png)
 
 ## Application Testing
 
