@@ -4,19 +4,19 @@
 A secure, real-time messaging application built with Python. This project demonstrartes End-to-End Encrpytion (E2EE) using AES-18, implemented via the Fernet module, over a WebSocket connection using Tkinter for the Gui
 
 ## Learning Outcomes
-[TODO: Add learning objectives from the project]
-- 1. 
-- 2
-- 3
-- 4
+-  Learned to structure a complex application.
+- Implemented real-world encryption standards. 
+- Built a responsive, dark-themed interface.
+- Understood file I/O operations.
+- Utilize the threading module to isolate network logic.
 
 ## Features
-- 1. End-to-End encrpytion (E2EE)
-- 2. Real-time communication.
-- 3. Modular Code Structure.
-- 4. Chat History.
-- 5. Tamper Detection.
-- 6. User-friendly GUI.
+- End-to-End encrpytion (E2EE)
+- Real-time communication.
+- Modular Code Structure.
+- Chat History.
+- Tamper Detection.
+- User-friendly GUI.
 
 ## Project Structure
 ```SecureChatApp/
@@ -49,9 +49,12 @@ python3 main.py
 ```
 
 **Expected Output**
-![alt text](image.png)
+
 
 ## Application Testing
+```bash
+python test_secure_chat.py
+```
 
 ## License
 This project is licensed under free MIT License. See more [License](/LICENSE).
