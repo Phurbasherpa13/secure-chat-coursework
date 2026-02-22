@@ -11,11 +11,12 @@ A secure, real-time messaging application built with Python. This project demons
 - 4
 
 ## Features
-[TODO: Add about the features of the application]
-- 1
-- 2
-- 3
-- 4
+- 1. End-to-End encrpytion (E2EE)
+- 2. Real-time communication.
+- 3. Modular Code Structure.
+- 4. Chat History.
+- 5. Tamper Detection.
+- 6. User-friendly GUI.
 
 ## Project Structure
 ```SecureChatApp/
