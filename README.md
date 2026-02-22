@@ -53,4 +53,4 @@ python3 main.py
 This project is licensed under free MIT License. See more [License](/LICENSE).
 
 ## Author
-- **Phurba sherpa** - Intial work
+- **Phurba Sherpa** - Intial work
