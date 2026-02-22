@@ -18,8 +18,16 @@ A secure, real-time messaging application built with Python. This project demons
 - 4
 
 ## Project Structure
-```
-[TODO: Add file structure in this repo]
+```SecureChatApp/
+│
+├── main.py              # Entry point: Initializes the app and applies nest-asyncio.
+├── gui.py               # UI Layer: Handles Tkinter widgets, layout, and user events.
+├── core.py              # Network Layer: Manages WebSocket connections and the event loop.
+├── security.py          # Cryptography Layer: Handles AES-128 encryption/decryption logic.
+├── utils.py             # Utility Layer: Handles file I/O (saving/loading history).
+├── requirements.txt     # List of Python dependencies.
+├── .gitignore          # Specifies files to exclude from version control.
+└── README.md           # This file.
 ```
 
 ## Quick Start
