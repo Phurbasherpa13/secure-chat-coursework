@@ -73,5 +73,24 @@ class TestFileUtils(unittest.TestCase):
         # Verify content matches
         self.assertIn(message, content)
         
+    def test_load_non_existent_file(self):
+        """Test that loading a file that doesn't exist returns an empty string."""
+        # Point to a file that definitely doesn't exist
+        fake_file = os.path.join(self.test_dir, "does_not_exist.txt")
+        
+        content = utils.load_history(fake_file)
+        
+        self.assertEqual(content, "")
+
+    def test_save_appends_to_file(self):
+        """Test that saving multiple times appends data rather than overwriting."""
+        msg1 = "Message 1"
+        msg2 = "Message 2"
+        
+        utils.save_to_file(self.test_file, msg1)
+        utils.save_to_file(self.test_file, msg2)
+        
+        content = utils.load_history(self.test_file)
+        
 if __name__ == '__main__':
     unittest.main()
