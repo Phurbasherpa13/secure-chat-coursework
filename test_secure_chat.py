@@ -22,7 +22,13 @@ class TestSecurityEngine(unittest.TestCase):
         
         # Check if decrypted text matches original
         self.assertEqual(decrypted_text, self.test_message)
-
+        
+    def test_key_derivation_consistency(self):
+        """Test that the same password generates the same key."""
+        engine2 = security.SecurityEngine(self.password)
+        
+        # Both engines should have the same internal key
+        self.assertEqual(self.engine.key, engine2.key)
 
 if __name__ == '__main__':
     unittest.main()
