@@ -50,5 +50,7 @@ class TestSecurityEngine(unittest.TestCase):
         # Base64 encoding of 32 bytes results in 44 characters.
         self.assertEqual(len(self.engine.key), 44)
 
+class TestFileUtils(unittest.TestCase):
+    pass
 if __name__ == '__main__':
     unittest.main()
