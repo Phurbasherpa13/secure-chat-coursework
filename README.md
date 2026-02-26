@@ -49,6 +49,7 @@ python3 main.py
 ```
 
 **Expected Output**
+<img width="750" height="905" alt="image" src="https://github.com/user-attachments/assets/7b51fc6a-e722-44dc-8c67-04a682afc4ba" />
 
 
 ## Application Testing
