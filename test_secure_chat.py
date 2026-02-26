@@ -22,13 +22,27 @@ class TestSecurityEngine(unittest.TestCase):
         
         # Check if decrypted text matches original
         self.assertEqual(decrypted_text, self.test_message)
-        
+
     def test_key_derivation_consistency(self):
         """Test that the same password generates the same key."""
         engine2 = security.SecurityEngine(self.password)
         
         # Both engines should have the same internal key
         self.assertEqual(self.engine.key, engine2.key)
+
+    def test_decryption_with_wrong_key_fails(self):
+        """Test that a message encrypted with Key A cannot be decrypted with Key B."""
+        # Encrypt with Engine A
+        encrypted_bytes = self.engine.encrypt_message(self.test_message)
+        
+        # Create Engine B with a DIFFERENT password
+        wrong_engine = security.SecurityEngine("WrongPassword")
+        
+        # Try to decrypt with Engine B
+        result = wrong_engine.decrypt_message(encrypted_bytes)
+        
+        # It should return the error string defined in your code
+        self.assertEqual(result, "[Error: Decryption Failed]")
 
 if __name__ == '__main__':
     unittest.main()
