@@ -55,5 +55,23 @@ class TestFileUtils(unittest.TestCase):
         """Create a temporary directory for test files."""
         self.test_dir = tempfile.mkdtemp()
         self.test_file = os.path.join(self.test_dir, "test_history.txt")
+    
+    def tearDown(self):
+        """Remove the temporary directory after tests."""
+        shutil.rmtree(self.test_dir)
+
+    def test_save_and_load_history(self):
+        """Test that saving a message and loading it back returns the same data."""
+        message = "[2024-01-01 12:00:00] [System] Test started."
+        
+        # Save the message
+        utils.save_to_file(self.test_file, message)
+        
+        # Load the message
+        content = utils.load_history(self.test_file)
+        
+        # Verify content matches
+        self.assertIn(message, content)
+        
 if __name__ == '__main__':
     unittest.main()
