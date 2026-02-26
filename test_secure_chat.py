@@ -103,5 +103,15 @@ class TestModuleImports(unittest.TestCase):
             self.assertTrue(True)
         except ImportError as e:
             self.fail(f"Failed to import core module: {e}")
+     def test_import_gui_module(self):
+        """Test that the gui module can be imported."""
+        try:
+            # We don't initialize the GUI here (as it needs root window),
+            # just check the import works.
+            import gui
+            self.assertTrue(True)
+        except ImportError as e:
+            self.fail(f"Failed to import gui module: {e}")
+            
 if __name__ == '__main__':
     unittest.main()
