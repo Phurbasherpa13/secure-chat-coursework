@@ -96,6 +96,12 @@ class TestFileUtils(unittest.TestCase):
 
 
 class TestModuleImports(unittest.TestCase):
-
+     def test_import_core_module(self):
+        """Test that the core module can be imported."""
+        try:
+            import core
+            self.assertTrue(True)
+        except ImportError as e:
+            self.fail(f"Failed to import core module: {e}")
 if __name__ == '__main__':
     unittest.main()
