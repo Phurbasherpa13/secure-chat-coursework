@@ -51,6 +51,9 @@ class TestSecurityEngine(unittest.TestCase):
         self.assertEqual(len(self.engine.key), 44)
 
 class TestFileUtils(unittest.TestCase):
-    pass
+    def setUp(self):
+        """Create a temporary directory for test files."""
+        self.test_dir = tempfile.mkdtemp()
+        self.test_file = os.path.join(self.test_dir, "test_history.txt")
 if __name__ == '__main__':
     unittest.main()
