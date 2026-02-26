@@ -91,6 +91,11 @@ class TestFileUtils(unittest.TestCase):
         utils.save_to_file(self.test_file, msg2)
         
         content = utils.load_history(self.test_file)
-        
+        self.assertIn(msg1, content)
+        self.assertIn(msg2, content)
+
+
+class TestModuleImports(unittest.TestCase):
+
 if __name__ == '__main__':
     unittest.main()
