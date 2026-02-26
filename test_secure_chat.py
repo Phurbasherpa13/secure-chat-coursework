@@ -44,5 +44,11 @@ class TestSecurityEngine(unittest.TestCase):
         # It should return the error string defined in your code
         self.assertEqual(result, "[Error: Decryption Failed]")
 
+    def test_key_is_url_safe_base64(self):
+        """Test that the generated key is in the correct format for Fernet."""
+        # Fernet requires a 32-byte url-safe base64-encoded key.
+        # Base64 encoding of 32 bytes results in 44 characters.
+        self.assertEqual(len(self.engine.key), 44)
+
 if __name__ == '__main__':
     unittest.main()
